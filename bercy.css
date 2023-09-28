@@ -1,0 +1,259 @@
+/* BOULZE et GROSSMAN */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;}
+
+/* .carts .cart .cart-header{
+    display: flex;
+    flex-wrap: wrap;
+    /* Mettre un espace entre titre et prix*
+    justify-content: space-between;
+} */
+
+
+/* Responsive */
+@media screen and (maxwidth:640px){
+    nav .onglet .link, nav h1{
+        display: none;
+    }
+    .carts .cart img{
+        width: 300px;
+    }
+}
+
+
+/* Formulaire de contact */
+h2{
+    text-align: center;
+
+}
+/* Input */
+.input{
+    margin: 10px 8px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: lightgrey;
+    width: 90%;
+}
+
+.label{
+    margin: 10px 8px;
+}
+
+.container{
+    box-sizing : border-box;
+    border-radius:5px;
+    background-color:#f2f2f2;
+    padding:20px;
+    width: 100%;
+    /* redéfinition 400 + 2*20 */
+    max-width: 440px;
+    margin: auto;
+}
+
+/* Bouton */
+.boutonform {
+    margin: 10px 8px;
+    width: 120px;
+    height: 30px;
+    background: lightgray;
+    color: black;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    /*box-shadow: 5px 5px 5px #eee;*/
+    text-shadow:none;
+    font-weight: bold;
+    }
+    
+.boutonform:hover {
+    background: gray;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    /*box-shadow: 5px 5px 5px #eee;*/
+    text-shadow:none;
+    
+    }
+/* Fin de bouton */
+
+
+/* Profil */
+.profil {
+    padding: 20px 20px;
+}
+
+.lien{
+    text-decoration: none;
+    color: black;
+}
+
+/* Réponse auto */
+
+.boutonauto {
+    margin: 10px 8px;
+    width: 250px;
+    height: 30px;
+    background: lightgray;
+    color: black;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    /*box-shadow: 5px 5px 5px #eee;*/
+    text-shadow:none;
+    font-weight: bold;
+    }
+    
+.boutonauto:hover {
+    background: gray;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    /*box-shadow: 5px 5px 5px #eee;*/
+    text-shadow:none;
+    
+    }
+/* Fin de boutonauto */
+
+/* Panier */
+
+/* Styles pour le conteneur du panier */
+.cart-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Styles pour la liste des produits dans le panier */
+  .cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Styles pour chaque élément de produit dans la liste du panier */
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    
+  }
+  
+  /* Styles pour l'image de produit dans chaque élément de produit */
+  .cart-item img {
+    width: 20%;
+    height: 20%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  /* Styles pour le nom de produit dans chaque élément de produit */
+  .cart-item .name {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  /* Styles pour le prix de produit dans chaque élément de produit */
+  .cart-item .price {
+    font-size: 16px;
+  }
+
+  .cart-item .size {
+    font-size: 15px;
+  }
+  
+  /* Styles pour le bouton de suppression dans chaque élément de produit */
+  .cart-item .remove-button {
+    border: none;
+    background-color: transparent;
+    color: #999;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* Styles pour le total du panier */
+  .cart-total {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+
+/* Fin Panier */
+
+
+/* Favori */
+.favori-container {
+    margin: 20px;
+    margin-top: 20px;   /* Margin top permet de créer de l'espace au dessus */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+  }
+
+.favori-list{
+    list-style: none;
+    display: flex;
+    /*  wrap sert a empiler si resolutions trop petites */
+    flex-wrap: wrap;
+}
+
+.favori-list .favori-item{
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.favori-item img{
+    width: 33%;
+}
+
+/* Fin Favori */
+
+/* Bouton Favori */
+
+/* Permet d'enlever le style du bouton */
+.boutonfavori{
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Fin bouton favori */
+
+
+/* Styles pour les messages de confirmation */
+.messages {
+    list-style: none;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+.messages li {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Style pour le message de confirmation de succès */
+.messages .success {
+    background-color: #4caf50;
+  }
+  
+  /* Style pour le message de confirmation d'erreur */
+.messages .error {
+    background-color: #f44336;
+  }
+  
+  /* Style pour le message de confirmation d'avertissement */
+.messages .warning {
+    background-color: #ff9800;
+  }
+  

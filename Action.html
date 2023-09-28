@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action</title>
+    <link rel="stylesheet" href="static/bercy.css"/>
+
+</head>
+<!-- Ce script va permettre d'afficher et de cacher le formulaire -->
+<script>
+    function afficherFormAdd() {
+        var x= document.getElementById("formulaire_add");   //on récupère le style avec la méthode getElementById
+        if (x.style.display == 'none'){
+            x.style.display = 'block';
+        }
+        else{
+            x.style.display = 'none';
+        }
+    }
+
+    function afficherFormSelect() {
+        var x= document.getElementById("formulaire_select");   
+        if (x.style.display == 'none'){
+            x.style.display = 'block';
+        }
+        else{
+            x.style.display = 'none';
+        }
+    }
+
+    function afficherFormModif() {
+        var x= document.getElementById("formulaire_modif");   
+        if (x.style.display == 'none'){
+            x.style.display = 'block';
+        }
+        else{
+            x.style.display = 'none';
+        }
+    }
+
+    function afficherFormDelete() {
+        var x= document.getElementById("formulaire_delete");   
+        if (x.style.display == 'none'){
+            x.style.display = 'block';
+        }
+        else{
+            x.style.display = 'none';
+        }
+    }
+</script>
+<body align="center">
+    <h1 align="center">Formulaire d'action</h1>
+
+
+<!-- Formulaire ADD -->
+<form method="POST" action="/add" name="add_action">
+    <button type="button" class="boutonauto"  onclick="afficherFormAdd()">Ajouter une action</button>
+
+    <div id="formulaire_add" class="container" style="display: none;">
+
+            <label for="add_id" class="label">ID :</label>
+            <input type="text" id="add_id" name="add_id" class="input" required>
+
+            <label for="intitule" class="label">Intitulé :</label>
+            <input type="text" id="intitule" name="intitule" class="input" required><br>
+
+            <label for="taux_avancement" class="label">Taux d'avancement :</label>
+            <input type="number" id="taux_avancement" min="0" max="100" name="taux_avancement" class="input" required><br>
+
+            <label for="objectif" class="label">Objectif :</label>
+            <input type="text" id="objectif" name="objectif" class="input" required><br>
+
+            <button type="submit">Ajouter</button>
+    </div>
+</form>
+
+<form method="POST" action="/select" name="select_action">
+    <button type="button" class="boutonauto"  onclick="afficherFormSelect()">Sélectionner une action</button>
+
+    <div id="formulaire_select" class="container" style="display: none;">
+
+            <label for="select_id" class="label">ID :</label>
+            <input type="text" id="select_id" name="select_id" class="input" required>
+
+            <button type="submit">Rechercher</button>
+    </div>
+</form>
+
+<form method="POST" action="/update" name="modifier_action">
+    <button type="button" class="boutonauto"  onclick="afficherFormModif()">Modifier une action</button>
+
+    <div id="formulaire_modif" class="container" style="display: none;">
+
+            <label for="modif_id" class="label">ID :</label>
+            <input type="text" id="modif_id" name="modif_id" class="input" required>
+
+            <label for="new_intitule" class="label">Nouvel intitulé :</label>
+            <input type="text" id="new_intitule" name="new_intitule" class="input" required><br>
+
+            <label for="new_taux" class="label">Nouveau taux d'avancement :</label>
+            <input type="number" id="new_taux" min="0" max="100" name="new_taux" class="input" required><br>
+
+            <label for="new_objectif" class="label">Nouvel objectif :</label>
+            <input type="text" id="new_objectif" class="input" name="new_objectif" required><br>
+
+            <button type="submit">Modifier</button>
+
+    </div>
+</form>
+<!-- DELETE -->
+<form method="POST" action="/delete" name="delete_action">
+    <button type="button" class="boutonauto"  onclick="afficherFormDelete()">Supprimer une action</button>
+
+    <div id="formulaire_delete" class="container" style="display: none;">
+
+            <label for="delete_id" class="label">ID :</label>
+            <input type="text" id="delete_id" name="delete_id" class="input" required>
+
+            <button type="submit">Supprimer</button>
+    </div>
+</form>
+
+<!-- Message de confirmation -->
+{% if action %}
+        <h2>Informations sur l'action (ID {{ action[0] }}):</h2>
+            <p>ID: {{ action[0] }}</p>
+            <p>Intitulé: {{ action[1] }}</p>
+            <p>Taux d'avancement: {{ action[2] }}</p>
+            <p>Objectif: {{ action[3] }}</p>
+{% else %}
+        <p>Pas d'action associé à cette ID</p>
+{% endif %}
+<!-- Fin du message de confirmation -->
+
+</body>
+</html>
